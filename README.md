@@ -29,6 +29,15 @@ Reporting: Confusion matrix and under-triage rate (FN / (TP + FN))
 - `src/` training and evaluation scripts
 - `data/README.md` instructions to obtain the dataset (no raw data stored)
 
+## Decision threshold (recall-prioritized)
+Because under-triage (missing true emergencies) is more harmful than over-triage in triage settings, we set the decision threshold to **0.30** to prioritize recall for emergency cases.
+
+At threshold=0.30:
+- Recall (Emergency): 0.925
+- Precision (Emergency): 0.660
+- False Negatives (under-triage): 11 (reduced from 35 at threshold=0.50)
+- False Positives (over-triage): 70
+
 ## Next steps
 - Exploratory data analysis (missingness, outliers, class imbalance)
 - Baseline model (logistic regression)
