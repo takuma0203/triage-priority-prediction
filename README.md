@@ -38,6 +38,17 @@ At threshold=0.30:
 - False Negatives (under-triage): 11 (reduced from 35 at threshold=0.50)
 - False Positives (over-triage): 70
 
+## Results (baseline vs with chief complaint text)
+Adding chief complaint text (TF-IDF) substantially improved discrimination performance:
+
+- ROC-AUC improved from 0.745 → 0.854.
+- At a safety-first threshold=0.30:
+  - Recall (Emergency): 0.925 → 0.939
+  - False Negatives (under-triage): 11 → 9
+  - False Positives (over-triage): 70 → 55
+
+This indicates chief complaint text provides important signal for triage prioritization.
+
 ## Next steps
 - Exploratory data analysis (missingness, outliers, class imbalance)
 - Baseline model (logistic regression)
